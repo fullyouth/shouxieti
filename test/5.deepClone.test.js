@@ -1,4 +1,4 @@
-import { deepClone } from '../src/5.deepClone';
+import { deepClone } from '../src/5.深浅拷贝';
 
 describe('deepClone', () => {
   it('should clone a simple object', () => {

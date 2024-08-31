@@ -4,9 +4,9 @@ const path = require('path');
 const srcDirectory = path.join(__dirname, 'src');
 
 function readFilesInSrc() {
-  return new Promise(resolve => {
+  return new Promise(resolveWrap => {
     let ret = ''
-    fs.readdir(srcDirectory, (err, files) => {
+    fs.readdir(srcDirectory, async (err, files) => {
       if (err) {
         console.error('Error reading directory:', err);
         return;
@@ -14,36 +14,42 @@ function readFilesInSrc() {
 
       // 过滤出仅.js 文件
       let jsFiles = files.filter(file => path.extname(file) === '.js');
-
-      // 自定义排序函数
-      jsFiles = jsFiles.sort((a, b) => {
-        const numA = parseInt(a.match(/^\d+\./)?.[0].replace('.', ''));
-        const numB = parseInt(b.match(/^\d+\./)?.[0].replace('.', ''));
+      // 根据文件名排序
+      let sortedFiles = jsFiles.sort((a, b) => {
+        const numA = parseInt(a.match(/^\d+\./)[0].replace('.', ''));
+        const numB = parseInt(b.match(/^\d+\./)[0].replace('.', ''));
         return numA - numB;
       });
 
-      jsFiles.forEach((file, index) => {
-        const filePath = path.join(srcDirectory, file);
-        fs.stat(filePath, (statErr, stats) => {
-          if (statErr) {
-            console.error('Error getting file stats:', statErr);
-            return;
-          }
+      for(let i = 0; i< sortedFiles.length; i++) {
+        let curFile = sortedFiles[i]
+        await readFile(curFile)
+      }
+      resolveWrap(ret)
 
-          if (stats.isFile()) {
-            fs.readFile(filePath, 'utf8', (readErr, content) => {
-              if (readErr) {
-                console.error(`Error reading file ${filePath}:`, readErr);
-              } else {
-                ret = ret + format(file, content)
-              }
-              if (index === files.length - 1) {
-                resolve(ret)
-              }
-            });
-          }
-        });
-      });
+      function readFile(file) {
+        return new Promise(resolve => {
+          const filePath = path.join(srcDirectory, file);
+          fs.stat(filePath, (statErr, stats) => {
+            if (statErr) {
+              console.error('Error getting file stats:', statErr);
+              return;
+            }
+
+            if (stats.isFile()) {
+              fs.readFile(filePath, 'utf8', (readErr, content) => {
+                if (readErr) {
+                  console.error(`Error reading file ${filePath}:`, readErr);
+                } else {
+                  console.log(`【${file}】读取成功`)
+                  ret = ret + format(file, content)
+                }
+                resolve()
+              });
+            }
+          });
+        })
+      }
     });
   })
 }
@@ -57,7 +63,6 @@ function format(name, content) {
 ${content}
 \`\`\`
   `
-  console.log(path)
   return content
 }
 
