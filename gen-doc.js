@@ -86,17 +86,48 @@ function writeDoc(content) {
   })
 }
 
-function createMenu(arr) {
+function createMenu(title, arr) {
   let list = ''
   arr.forEach(item => {
-    list = list + `| [${item}](./src/${item}.js)      |        |\n`
+    let anchor = item.replace('.', '')
+    list = list + `| [${item}](#${anchor})      |        |\n`
   })
   return `
-
+**${title}**
 | 题目      | 描述 |
 | ----------- | ----------- |
 ${list}  
 `
+}
+
+function createTag(arr) {
+  let tagData = require('./config/class.json')
+  let data = {
+  }
+  let lastList = []
+  arr.forEach(fileName => {
+    let finded = false
+    for (let tag in tagData) {
+      data[tag] = data[tag] || []
+      let taglist = tagData[tag]
+      let nameIndex = +fileName.split('.')[0]
+      if (taglist.includes(nameIndex)) {
+        data[tag].push(fileName)
+        finded = true
+      }
+    }
+    if (!finded) {
+      lastList.push(fileName)
+    }
+  })
+  data['未分类'] = lastList
+  console.log('分类数据', data)
+
+  let ret = ''
+  Object.keys(data).forEach(tag => {
+    ret += createMenu(tag, data[tag])
+  })
+  return ret
 }
 
 async function main() {
@@ -110,7 +141,7 @@ async function main() {
 - [单测概览](https://www.haoqi123.com/shouxieti/html-report/index.html)
 `
   let { names, content } = await readFilesInSrc()
-  let menu = createMenu(names.split(',')) // 目录表格
+  let menu = createTag(names.split(',')) // 目录表格
   let success = await writeDoc(header + menu + content)
   if (success) {
     console.log('创建doc成功~')
