@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1725108694506" clover="3.2.0">
-  <project timestamp="1725108694506" name="All files">
-    <metrics statements="70" coveredstatements="67" conditionals="32" coveredconditionals="27" methods="32" coveredmethods="30" elements="134" coveredelements="124" complexity="0" loc="70" ncloc="70" packages="1" files="10" classes="10"/>
+<coverage generated="1725110618986" clover="3.2.0">
+  <project timestamp="1725110618986" name="All files">
+    <metrics statements="72" coveredstatements="69" conditionals="32" coveredconditionals="27" methods="34" coveredmethods="32" elements="138" coveredelements="128" complexity="0" loc="72" ncloc="72" packages="1" files="11" classes="11"/>
     <file name="1.防抖.js" path="/home/runner/work/shouxieti/shouxieti/src/1.防抖.js">
       <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <line num="3" count="3" type="stmt"/>
@@ -15,6 +15,11 @@
       <line num="13" count="4" type="stmt"/>
       <line num="14" count="1" type="stmt"/>
       <line num="15" count="1" type="stmt"/>
+    </file>
+    <file name="10.偏函数.js" path="/home/runner/work/shouxieti/shouxieti/src/10.偏函数.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
     </file>
     <file name="11.AJAX.js" path="/home/runner/work/shouxieti/shouxieti/src/11.AJAX.js">
       <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
