@@ -6,7 +6,7 @@ const githubToken = process.env.GITHUB_TOKEN;
 
 ghpages.publish(path.join(__dirname, 'reports'), {
   branch: 'gh-pages',
-  repo: `https://${githubToken}@github.com/fullyouth/shouxieti.git`,
+  repo: `https://username:${githubToken}@github.com/fullyouth/shouxieti.git`,
   user: {
     name: 'haoqizhang',
     email: 'fullyouth@163.com'
