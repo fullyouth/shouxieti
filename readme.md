@@ -19,6 +19,7 @@
 | [7.函数柯里化](./src/7.函数柯里化.js)      |        |
 | [8.组合函数](./src/8.组合函数.js)      |        |
 | [9.before函数](./src/9.before函数.js)      |        |
+| [10.偏函数](./src/10.偏函数.js)      |        |
 | [11.AJAX](./src/11.AJAX.js)      |        |
   
 
@@ -227,6 +228,11 @@ export function before (fn, times) {
     }
   }
 }
+```
+  
+### [10.偏函数](./src/10.偏函数.js)
+```js
+
 ```
   
 ### [11.AJAX](./src/11.AJAX.js)
