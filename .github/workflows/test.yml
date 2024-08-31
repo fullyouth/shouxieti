@@ -14,7 +14,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16 # 根据你的项目需求调整 Node.js 版本
+          node-version: 20 # 根据你的项目需求调整 Node.js 版本
 
       - name: Install dependencies
         run: npm install
@@ -23,8 +23,8 @@ jobs:
         run: |
           npm run test
 
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report
-          path: coverage/ # 假设 Jest 生成的覆盖率报告在 coverage 目录下
+      - name: Deploy unit test report
+        run: |
+          npm run deploy-report
+
+     

@@ -2,7 +2,7 @@ module.exports = async () => {
   return {
     collectCoverage: true,
     collectCoverageFrom: ['src/**/*.{js,jsx}'],
-    coverageDirectory: 'coverage',
+    coverageDirectory: 'reports/coverage',
     transform: {
       '^.+\\.js$': 'babel-jest',
     },
@@ -12,7 +12,7 @@ module.exports = async () => {
       [
         'jest-html-reporters',
         {
-          publicPath: './html-report',
+          publicPath: './reports/html-report',
           filename: 'report.html',
         },
       ],

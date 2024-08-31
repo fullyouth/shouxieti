@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "deploy-report": "gh-pages -d reports"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "babel-jest": "^29.7.0",
+    "gh-pages": "^6.1.1",
     "jest": "^29.7.0",
     "jest-html-reporters": "^3.1.7"
   }
