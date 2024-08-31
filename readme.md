@@ -29,6 +29,22 @@ export function debounce(fn, delay, options) {
 }
 ```
   
+### [2.节流](./src/2.节流.js)
+```js
+// 节流函数
+export function throttle(fn, delay) {
+  let timer = null
+  return function (...args) {
+    if (!timer) {
+      fn.call(this, ...args)
+      timer = setTimeout(() => {
+        timer = null
+      }, delay)
+    } 
+  }
+}
+```
+  
 ### [5.深浅拷贝](./src/5.深浅拷贝.js)
 ```js
 export function deepClone(obj) {
