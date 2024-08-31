@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "authors": {
+    "name": "haoqizhang",
+    "email": "fullyouth@163.com"
+  },
   "scripts": {
     "test": "jest",
-    "deploy-report": "gh-pages -d reports"
+    "deploy-report": "gh-pages -d reports -t $GITHUB_TOKEN"
   },
   "author": "",
   "license": "ISC",
