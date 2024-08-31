@@ -18,6 +18,7 @@
 | [6.发布订阅](./src/6.发布订阅.js)      |        |
 | [7.函数柯里化](./src/7.函数柯里化.js)      |        |
 | [8.组合函数](./src/8.组合函数.js)      |        |
+| [9.before函数](./src/9.before函数.js)      |        |
 | [11.AJAX](./src/11.AJAX.js)      |        |
   
 
@@ -157,25 +158,24 @@ export class EventEmitter {
   }
 }
 
-// 使用示例
-const emitter = new EventEmitter();
+// const emitter = new EventEmitter();
 
-const callback1 = (data) => {
-  console.log('Callback 1:', data);
-};
+// const callback1 = (data) => {
+//   console.log('Callback 1:', data);
+// };
 
-const callback2 = (data) => {
-  console.log('Callback 2:', data);
-};
+// const callback2 = (data) => {
+//   console.log('Callback 2:', data);
+// };
 
-emitter.on('event1', callback1);
-emitter.on('event1', callback2);
+// emitter.on('event1', callback1);
+// emitter.on('event1', callback2);
 
-emitter.emit('event1', 'Hello from event emitter!');
+// emitter.emit('event1', 'Hello from event emitter!');
 
-emitter.off('event1', callback1);
+// emitter.off('event1', callback1);
 
-emitter.emit('event1', 'Another emit after removing callback1.');
+// emitter.emit('event1', 'Another emit after removing callback1.');
 ```
   
 ### [7.函数柯里化](./src/7.函数柯里化.js)
@@ -191,16 +191,6 @@ export function curry(func) {
     }
   };
 }
-
-function add(a, b, c) {
-  return a + b + c;
-}
-
-const curriedAdd = curry(add);
-
-console.log(curriedAdd(1)(2)(3)); // 6
-console.log(curriedAdd(1, 2)(3)); // 6
-console.log(curriedAdd(1)(2, 3)); // 6
 
 ```
   
@@ -219,6 +209,22 @@ export function compose(...fns) {
       val = fn(val)
     })
     return val
+  }
+}
+```
+  
+### [9.before函数](./src/9.before函数.js)
+```js
+/**
+ * 指定函数调用次数
+ */
+export function before (fn, times) {
+  return (...args) => {
+    if (times === 0) return
+    fn(...args)
+    if (times > 0) {
+      times-- 
+    }
   }
 }
 ```
