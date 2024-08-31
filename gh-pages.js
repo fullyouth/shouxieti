@@ -7,6 +7,10 @@ const githubToken = process.env.GH_PAGES_TOKEN;
 ghpages.publish(path.join(__dirname, 'reports'), {
   branch: 'gh-pages',
   repo: `https://${githubToken}@github.com/fullyouth/shouxieti.git`,
+  user: {
+    name: 'haoqizhang',
+    email: 'fullyouth@163.com'
+  }
 }, (err) => {
   if (err) {
     console.error('Error deploying to gh-pages:', err);
