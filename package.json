@@ -10,8 +10,8 @@
   "scripts": {
     "test": "jest",
     "deploy-local": "gh-pages -d reports -t $GITHUB_TOKEN",
-    "deploy-report": "node gh-pages.js"
-
+    "deploy-report": "node gh-pages.js",
+    "docs": "node gen-doc.js"
   },
   "author": "",
   "license": "ISC",

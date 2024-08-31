@@ -12,7 +12,7 @@ ghpages.publish(path.join(__dirname, 'reports'), {
   }
 }, (err) => {
   if (err) {
-    throw new Error('Error deploying to gh-pages:', err)
+    console.log('Error deploying to gh-pages:', err)
   } else {
     console.log('Successfully deployed to gh-pages!');
   }

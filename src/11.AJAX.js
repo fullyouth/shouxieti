@@ -1,33 +1,3 @@
-
-# Javascript常见面试手写题
-
-每一个方法都使用jest单元测试进行了验证，自己手写练习的时候可以跑单测进行验证
-
-## 单测报告
-- [覆盖率](https://www.haoqi123.com/shouxieti/coverage/lcov-report/index.html)
-- [单测概览](https://www.haoqi123.com/shouxieti/html-report/index.html)
-
-### [5.深浅拷贝](./src/5.深浅拷贝.js)
-```js
-export function deepClone(obj) {
-  if (obj === null || typeof obj!== 'object') {
-    return obj;
-  }
-  if (Array.isArray(obj)) {
-    return obj.map(item => deepClone(item));
-  }
-  const clonedObj = {};
-  for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      clonedObj[key] = deepClone(obj[key]);
-    }
-  }
-  return clonedObj;
-}
-```
-  
-### [11.AJAX](./src/11.AJAX.js)
-```js
 // get
 export const getJSON = (url) => {
   return new Promise((resolve, reject) => {
@@ -72,6 +42,3 @@ export const postJSON = (url, data) => {
       xhr.send(data);
   });
 }
-
-```
-  
