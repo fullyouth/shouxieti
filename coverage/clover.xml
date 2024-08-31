@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1725113302332" clover="3.2.0">
-  <project timestamp="1725113302332" name="All files">
-    <metrics statements="72" coveredstatements="69" conditionals="32" coveredconditionals="27" methods="34" coveredmethods="32" elements="138" coveredelements="128" complexity="0" loc="72" ncloc="72" packages="1" files="11" classes="11"/>
+<coverage generated="1725115888069" clover="3.2.0">
+  <project timestamp="1725115888069" name="All files">
+    <metrics statements="85" coveredstatements="78" conditionals="42" coveredconditionals="27" methods="36" coveredmethods="34" elements="163" coveredelements="139" complexity="0" loc="85" ncloc="85" packages="1" files="11" classes="11"/>
     <file name="1.防抖.js" path="/home/runner/work/shouxieti/shouxieti/src/1.防抖.js">
       <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <line num="3" count="3" type="stmt"/>
@@ -22,9 +22,22 @@
       <line num="3" count="1" type="stmt"/>
     </file>
     <file name="11.AJAX.js" path="/home/runner/work/shouxieti/shouxieti/src/11.AJAX.js">
-      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <line num="2" count="0" type="stmt"/>
+      <metrics statements="15" coveredstatements="9" conditionals="10" coveredconditionals="0" methods="4" coveredmethods="2"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="0" type="cond" truecount="0" falsecount="4"/>
       <line num="7" count="0" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="20" count="0" type="cond" truecount="0" falsecount="4"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
     </file>
     <file name="2.节流.js" path="/home/runner/work/shouxieti/shouxieti/src/2.节流.js">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
