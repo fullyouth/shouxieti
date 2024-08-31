@@ -17,6 +17,7 @@
 | [5.深浅拷贝](./src/5.深浅拷贝.js)      |        |
 | [6.发布订阅](./src/6.发布订阅.js)      |        |
 | [7.函数柯里化](./src/7.函数柯里化.js)      |        |
+| [8.组合函数](./src/8.组合函数.js)      |        |
 | [11.AJAX](./src/11.AJAX.js)      |        |
   
 
@@ -201,6 +202,25 @@ console.log(curriedAdd(1)(2)(3)); // 6
 console.log(curriedAdd(1, 2)(3)); // 6
 console.log(curriedAdd(1)(2, 3)); // 6
 
+```
+  
+### [8.组合函数](./src/8.组合函数.js)
+```js
+/**
+ * 从右向左执行
+ * https://juejin.cn/post/6844903910834962446
+ */
+export function compose(...fns) {
+  if(fns.length === 0) {
+    return val => val
+  }
+  return function(val) {
+    fns.reverse().forEach(fn => {
+      val = fn(val)
+    })
+    return val
+  }
+}
 ```
   
 ### [11.AJAX](./src/11.AJAX.js)

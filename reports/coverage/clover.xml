@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1725097802780" clover="3.2.0">
-  <project timestamp="1725097802781" name="All files">
-    <metrics statements="74" coveredstatements="71" conditionals="26" coveredconditionals="22" methods="29" coveredmethods="27" elements="129" coveredelements="120" complexity="0" loc="74" ncloc="74" packages="1" files="8" classes="8"/>
+<coverage generated="1725107195916" clover="3.2.0">
+  <project timestamp="1725107195916" name="All files">
+    <metrics statements="80" coveredstatements="77" conditionals="28" coveredconditionals="24" methods="33" coveredmethods="31" elements="141" coveredelements="132" complexity="0" loc="80" ncloc="80" packages="1" files="9" classes="9"/>
     <file name="1.防抖.js" path="/Users/zhanghaoqi/shouxietiTest/src/1.防抖.js">
       <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <line num="3" count="3" type="stmt"/>
@@ -99,6 +99,15 @@
       <line num="19" count="1" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
       <line num="21" count="1" type="stmt"/>
+    </file>
+    <file name="8.组合函数.js" path="/Users/zhanghaoqi/shouxietiTest/src/8.组合函数.js">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <line num="5" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>
