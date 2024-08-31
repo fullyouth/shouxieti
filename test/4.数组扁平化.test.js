@@ -8,7 +8,7 @@ describe('flat1', () => {
   });
 });
 
-describe('flat', () => {
+describe('flat2', () => {
   it('should flatten a simple nested array', () => {
     const input = [1, [2, [3, 4], 5], 6];
     const expectedOutput = [1, 2, 3, 4, 5, 6];
@@ -28,7 +28,7 @@ describe('flat', () => {
   });
 });
 
-describe('flat', () => {
+describe('flat3', () => {
   it('should flatten a simple nested array', () => {
     const input = [1, [2, [3, 4], 5], 6];
     const expectedOutput = [1, 2, 3, 4, 5, 6];

@@ -20,7 +20,7 @@ export function flat3(arr, deep) {
   let ret = []
   for (let i = 0 ; i < arr.length ; i ++){
     if (Array.isArray(arr[i])) {
-      ret.push(...flat(arr[i], deep - 1))
+      ret.push(...flat3(arr[i], deep - 1))
     } else {
       ret.push(arr[i])
     }
