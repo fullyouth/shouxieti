@@ -232,6 +232,12 @@ export function before (fn, times) {
   
 ### [10.偏函数](./src/10.偏函数.js)
 ```js
+export function partial(fn, ...arg) {
+  return (...args) => {
+    return fn(...arg, ...args)
+  }
+}
+
 
 ```
   
