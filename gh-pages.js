@@ -2,7 +2,7 @@ const ghpages = require('gh-pages');
 const path = require('path');
 const fs = require('fs');
 
-const githubToken = process.env.GH_PAGES_TOKEN;
+const githubToken = process.env.GITHUB_TOKEN;
 
 ghpages.publish(path.join(__dirname, 'reports'), {
   branch: 'gh-pages',
