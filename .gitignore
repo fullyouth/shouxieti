@@ -1,3 +1,5 @@
 node_modules
 html-report
 yarn.lock
+reports/**
+coverage
