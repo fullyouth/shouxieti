@@ -13,7 +13,7 @@ module.exports = async () => {
         'jest-html-reporters',
         {
           publicPath: './reports/html-report',
-          filename: 'report.html',
+          filename: 'index.html',
         },
       ],
     ],
