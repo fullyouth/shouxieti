@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1725097871989" clover="3.2.0">
-  <project timestamp="1725097871989" name="All files">
+<coverage generated="1725098922477" clover="3.2.0">
+  <project timestamp="1725098922477" name="All files">
     <metrics statements="74" coveredstatements="71" conditionals="26" coveredconditionals="22" methods="29" coveredmethods="27" elements="129" coveredelements="120" complexity="0" loc="74" ncloc="74" packages="1" files="8" classes="8"/>
     <file name="1.防抖.js" path="/home/runner/work/shouxieti/shouxieti/src/1.防抖.js">
       <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
