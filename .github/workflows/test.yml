@@ -25,9 +25,9 @@ jobs:
 
       - name: Deploy unit test report
         run: |
-          export GITHUB_TOKEN=${{ secrets.GH_PAGES_TOKEN }}
+          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           npm run deploy-report
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
      
