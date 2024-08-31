@@ -6,6 +6,7 @@ const srcDirectory = path.join(__dirname, 'src');
 function readFilesInSrc() {
   return new Promise(resolveWrap => {
     let ret = ''
+    let names = ''
     fs.readdir(srcDirectory, async (err, files) => {
       if (err) {
         console.error('Error reading directory:', err);
@@ -25,7 +26,10 @@ function readFilesInSrc() {
         let curFile = sortedFiles[i]
         await readFile(curFile)
       }
-      resolveWrap(ret)
+      resolveWrap({
+        names: names,
+        content: ret
+      })
 
       function readFile(file) {
         return new Promise(resolve => {
@@ -42,6 +46,8 @@ function readFilesInSrc() {
                   console.error(`Error reading file ${filePath}:`, readErr);
                 } else {
                   console.log(`【${file}】读取成功`)
+                  let title = file.replace('.js', '');
+                  names = names ? names + ',' + title : title
                   ret = ret + format(file, content)
                 }
                 resolve()
@@ -80,6 +86,19 @@ function writeDoc(content) {
   })
 }
 
+function createMenu(arr) {
+  let list = ''
+  arr.forEach(item => {
+    list = list + `| [${item}](./src/${item}.js)      |        |\n`
+  })
+  return `
+
+| 题目      | 描述 |
+| ----------- | ----------- |
+${list}  
+`
+}
+
 async function main() {
   const header = `
 # Javascript常见面试手写题
@@ -90,8 +109,9 @@ async function main() {
 - [覆盖率](https://www.haoqi123.com/shouxieti/coverage/lcov-report/index.html)
 - [单测概览](https://www.haoqi123.com/shouxieti/html-report/index.html)
 `
-  let content = await readFilesInSrc()
-  let success = await writeDoc(header + content)
+  let { names, content } = await readFilesInSrc()
+  let menu = createMenu(names.split(',')) // 目录表格
+  let success = await writeDoc(header + menu + content)
   if (success) {
     console.log('创建doc成功~')
   } else {

@@ -7,6 +7,19 @@
 - [覆盖率](https://www.haoqi123.com/shouxieti/coverage/lcov-report/index.html)
 - [单测概览](https://www.haoqi123.com/shouxieti/html-report/index.html)
 
+
+| 题目      | 描述 |
+| ----------- | ----------- |
+| [1.防抖](./src/1.防抖.js)      |        |
+| [2.节流](./src/2.节流.js)      |        |
+| [3.数组去重](./src/3.数组去重.js)      |        |
+| [4.数组扁平化](./src/4.数组扁平化.js)      |        |
+| [5.深浅拷贝](./src/5.深浅拷贝.js)      |        |
+| [6.发布订阅](./src/6.发布订阅.js)      |        |
+| [7.函数柯里化](./src/7.函数柯里化.js)      |        |
+| [11.AJAX](./src/11.AJAX.js)      |        |
+  
+
 ### [1.防抖](./src/1.防抖.js)
 ```js
 // 1. 防抖
