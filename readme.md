@@ -31,6 +31,9 @@
 | 题目      | 描述 |
 | ----------- | ----------- |
 | [11.AJAX](#11AJAX)      |        |
+| [12.call](#12call)      |        |
+| [13.bind](#13bind)      |        |
+| [14.apply](#14apply)      |        |
   
 
 ### [1.防抖](./src/1.防抖.js)
@@ -282,5 +285,48 @@ export function ajaxPost(url, data, callback) {
   xhr.send(JSON.stringify(data));
 }
 
+```
+  
+### [12.call](./src/12.call.js)
+```js
+export function call(context, ...args) {
+  if (context === null || context === undefined) {
+    context = typeof window !== 'undefined' ? window : global
+  } else {
+    context = Object(context) // 原始值会被包装 如果是非原始值会直接返回
+  }
+  context.fn = this;
+  let ret = context.fn(...args)
+  delete context.fn
+  return ret
+}
+```
+  
+### [13.bind](./src/13.bind.js)
+```js
+export function bind(context, ...args) {
+  if (typeof this !== "function") {
+    throw new TypeError("Error");
+  }
+  let self = this
+  let fBound = function (...args2) {
+    return self.call(this instanceof self ? this : context, ...args, ...args2)
+  }
+  fBound.prototype = Object.create(self.prototype)
+  return fBound
+}
+```
+  
+### [14.apply](./src/14.apply.js)
+```js
+export function apply (context, argsArray) {
+  if (context === null || context === undefined) {
+    context = typeof window !== 'undefined' ? window : global
+  }
+  context.fn = this
+  let ret = context.fn(...Array.from(argsArray))
+  delete context.fn
+  return ret
+}
 ```
   
