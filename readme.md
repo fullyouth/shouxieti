@@ -34,14 +34,14 @@
 | [13.bind](#13bind)      |        |
 | [14.apply](#14apply)      |        |
 | [15.new](#15new)      |        |
+| [16.instanceof](#16instanceof)      |        |
+| [17.模拟jsonp](#17模拟jsonp)      |        |
   
 
 **未分类**
 | 题目      | 描述 |
 | ----------- | ----------- |
 | [11.AJAX](#11AJAX)      |        |
-| [16.instanceof](#16instanceof)      |        |
-| [17onp.js](#17onpjs)      |        |
   
 
 ### [1.防抖](./src/1.防抖.js)
@@ -368,7 +368,7 @@ export function _instanceof(V, F) {
 
 ```
   
-### [17onp.js](./src/17.jsonp.js)
+### [17.模拟jsonp](./src/17.模拟jsonp.js)
 ```js
 export function jsonp(url) {
   return new Promise((resolve, reject) => {
