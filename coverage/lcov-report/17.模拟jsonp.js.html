@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for 11.AJAX.js</title>
+    <title>Code coverage report for 17.模拟jsonp.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> 11.AJAX.js</h1>
+        <h1><a href="index.html">All files</a> 17.模拟jsonp.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
@@ -90,64 +90,61 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// get
-export function <span class="fstat-no" title="function not covered" >ajaxGet(</span>url, callback) {
-  const xhr = <span class="cstat-no" title="statement not covered" >new XMLHttpRequest();</span>
-<span class="cstat-no" title="statement not covered" >  xhr.open('GET', url, true);</span>
-<span class="cstat-no" title="statement not covered" >  xhr.onreadystatechange = <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
-<span class="cstat-no" title="statement not covered" >    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {</span>
-<span class="cstat-no" title="statement not covered" >      callback(xhr.responseText);</span>
-    }
-  };
-<span class="cstat-no" title="statement not covered" >  xhr.send();</span>
-}
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function <span class="fstat-no" title="function not covered" >jsonp(</span>url) {
+<span class="cstat-no" title="statement not covered" >  return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+    // 创建一个唯一的回调函数名
+    const uniqueCallbackName = <span class="cstat-no" title="statement not covered" >`jsonp_callback_${Date.now()}_${Math.random().toString(36).substring(2)}`;</span>
 &nbsp;
-// post
-export function <span class="fstat-no" title="function not covered" >ajaxPost(</span>url, data, callback) {
-  const xhr = <span class="cstat-no" title="statement not covered" >new XMLHttpRequest();</span>
-<span class="cstat-no" title="statement not covered" >  xhr.open('POST', url, true);</span>
-<span class="cstat-no" title="statement not covered" >  xhr.setRequestHeader('Content-Type', 'application/json');</span>
-<span class="cstat-no" title="statement not covered" >  xhr.onreadystatechange = <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
-<span class="cstat-no" title="statement not covered" >    if (xhr.readyState === 4) {</span>
-<span class="cstat-no" title="statement not covered" >      if (xhr.status === 200 || xhr.status === 201) {</span>
-<span class="cstat-no" title="statement not covered" >        callback(xhr.responseText);</span>
-      } else {
-<span class="cstat-no" title="statement not covered" >        console.error('Error in POST request:', xhr.statusText);</span>
-      }
-    }
-  };
-<span class="cstat-no" title="statement not covered" >  xhr.send(JSON.stringify(data));</span>
-}
-&nbsp;</pre></td></tr></table></pre>
+    // 创建一个 script 标签
+    const script = <span class="cstat-no" title="statement not covered" >document.createElement('script');</span>
+<span class="cstat-no" title="statement not covered" >    script.src = `${url}?callback=${uniqueCallbackName}`;</span>
+&nbsp;
+    // 定义全局回调函数
+<span class="cstat-no" title="statement not covered" >    window[uniqueCallbackName] = <span class="fstat-no" title="function not covered" >fu</span>nction(data) {</span>
+<span class="cstat-no" title="statement not covered" >      resolve(data);</span>
+      // 清除全局回调函数和 script 标签
+<span class="cstat-no" title="statement not covered" >      delete window[uniqueCallbackName];</span>
+<span class="cstat-no" title="statement not covered" >      document.body.removeChild(script);</span>
+    };
+&nbsp;
+    // 处理错误情况
+<span class="cstat-no" title="statement not covered" >    script.onerror = <span class="fstat-no" title="function not covered" >fu</span>nction() {</span>
+<span class="cstat-no" title="statement not covered" >      reject(new Error('JSONP request failed'));</span>
+<span class="cstat-no" title="statement not covered" >      delete window[uniqueCallbackName];</span>
+<span class="cstat-no" title="statement not covered" >      document.body.removeChild(script);</span>
+    };
+&nbsp;
+    // 将 script 标签添加到文档中
+<span class="cstat-no" title="statement not covered" >    document.body.appendChild(script);</span>
+  });
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
