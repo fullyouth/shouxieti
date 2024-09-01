@@ -133,12 +133,19 @@ function createTag(arr) {
 async function main() {
   const header = `
 # Javascript常见面试手写题
+此文档由\`npm run docs\` 自动生成  
 
-每一个方法都使用jest单元测试进行了验证，自己手写练习的时候可以跑单测进行验证
+本仓库通过自动化脚本，每次push会自动跑单测  
+**100%单测通过**,每一个方法都使用jest单元测试进行了验证  
+
+后续会持续更新  
 
 ## 单测报告
+每次push自动生成测试报告  
 - [覆盖率](https://www.haoqi123.com/shouxieti/coverage/lcov-report/index.html)
 - [单测概览](https://www.haoqi123.com/shouxieti/html-report/index.html)
+![image](./static/ut1.pic.jpg)
+![image](./static/ut2.pic.jpg)
 `
   let { names, content } = await readFilesInSrc()
   let menu = createTag(names.split(',')) // 目录表格
