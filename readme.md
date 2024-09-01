@@ -40,6 +40,8 @@
 | 题目      | 描述 |
 | ----------- | ----------- |
 | [11.AJAX](#11AJAX)      |        |
+| [16.instanceof](#16instanceof)      |        |
+| [17onp.js](#17onpjs)      |        |
   
 
 ### [1.防抖](./src/1.防抖.js)
@@ -344,6 +346,57 @@ export function _new(constructor, ...args) {
   let obj = Object.create(constructor.prototype)    // 替代1 2
   const ret = constructor.call(obj, ...args) // 3. 将创建的空对象作为this的上下文
   return typeof ret === 'object' ? ret : obj // 4. 如果该函数没有返回对象，则返回this
+}
+```
+  
+### [16.instanceof](./src/16.instanceof.js)
+```js
+export function _instanceof(V, F) {
+  if (Object.prototype.toString.call(V) !== '[object Object]') {
+    return false
+  }
+  let O = F.prototype
+  if (Object.prototype.toString.call(O) !== '[object Object]') {
+    return false
+  }
+  while(true) {
+    V = Object.getPrototypeOf(V)
+    if (V === null) return false
+    if (V === O) return true
+  }
+}
+
+```
+  
+### [17onp.js](./src/17.jsonp.js)
+```js
+export function jsonp(url) {
+  return new Promise((resolve, reject) => {
+    // 创建一个唯一的回调函数名
+    const uniqueCallbackName = `jsonp_callback_${Date.now()}_${Math.random().toString(36).substring(2)}`;
+
+    // 创建一个 script 标签
+    const script = document.createElement('script');
+    script.src = `${url}?callback=${uniqueCallbackName}`;
+
+    // 定义全局回调函数
+    window[uniqueCallbackName] = function(data) {
+      resolve(data);
+      // 清除全局回调函数和 script 标签
+      delete window[uniqueCallbackName];
+      document.body.removeChild(script);
+    };
+
+    // 处理错误情况
+    script.onerror = function() {
+      reject(new Error('JSONP request failed'));
+      delete window[uniqueCallbackName];
+      document.body.removeChild(script);
+    };
+
+    // 将 script 标签添加到文档中
+    document.body.appendChild(script);
+  });
 }
 ```
   
