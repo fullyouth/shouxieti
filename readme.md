@@ -18,9 +18,6 @@
 | [8.组合函数](#8组合函数)      |        |
 | [9.before函数](#9before函数)      |        |
 | [10.偏函数](#10偏函数)      |        |
-| [12.call](#12call)      |        |
-| [13.bind](#13bind)      |        |
-| [14.apply](#14apply)      |        |
   
 
 **数组**
@@ -28,6 +25,15 @@
 | ----------- | ----------- |
 | [3.数组去重](#3数组去重)      |        |
 | [4.数组扁平化](#4数组扁平化)      |        |
+  
+
+**Javascript原理**
+| 题目      | 描述 |
+| ----------- | ----------- |
+| [12.call](#12call)      |        |
+| [13.bind](#13bind)      |        |
+| [14.apply](#14apply)      |        |
+| [15.new](#15new)      |        |
   
 
 **未分类**
@@ -327,6 +333,17 @@ export function apply (context, argsArray) {
   let ret = context.fn(...Array.from(argsArray))
   delete context.fn
   return ret
+}
+```
+  
+### [15.new](./src/15.new.js)
+```js
+export function _new(constructor, ...args) {  
+  // let obj = {}                            // 1. 创建一个空对象({})
+  // obj.__proto__ = constructor.prototype          // 2. 链接该对象到另外一个对象
+  let obj = Object.create(constructor.prototype)    // 替代1 2
+  const ret = constructor.call(obj, ...args) // 3. 将创建的空对象作为this的上下文
+  return typeof ret === 'object' ? ret : obj // 4. 如果该函数没有返回对象，则返回this
 }
 ```
   

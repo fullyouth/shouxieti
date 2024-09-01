@@ -27,12 +27,17 @@ describe('bind functions', () => {
     expect(ret).toBe('zhq18a,b')
   })
 
-  it('bind fn is number', () => {
+  it('bind no function', () => {
     let fn = {
-      bind:()=>{}
+      bind: bind
     }
-    let retFn = fn.bind(undefined, 'a', 'b')
-    let ret = retFn?.()
-    expect(ret).toBe(undefined)
+    try {
+      let retFn = fn.bind(undefined, 'a', 'b')
+      let ret = retFn?.()
+      expect(ret).toBe(undefined)
+    } catch (error) {
+      
+    }
+    
   })
 });

@@ -46,4 +46,10 @@ describe('flat3', () => {
     const expectedOutput = [1, 2, 3];
     expect(flat3(input)).toEqual(expectedOutput);
   });
+
+  it('should handle arrays with no nesting', () => {
+    const input = [1, 2, 3, [4,[5]]];
+    const expectedOutput = [1, 2, 3, 4, [5]];
+    expect(flat3(input, 1)).toEqual(expectedOutput);
+  });
 });
