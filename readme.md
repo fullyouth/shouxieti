@@ -25,6 +25,7 @@
 | [8.组合函数](#8组合函数)      |        |
 | [9.before函数](#9before函数)      |        |
 | [10.偏函数](#10偏函数)      |        |
+| [17.模拟jsonp](#17模拟jsonp)      |        |
   
 
 **数组**
@@ -42,15 +43,15 @@
 | [14.apply](#14apply)      |        |
 | [15.new](#15new)      |        |
 | [16.instanceof](#16instanceof)      |        |
-| [17.模拟jsonp](#17模拟jsonp)      |        |
+| [18.promise.all](#18promise.all)      |        |
+| [19.promise.race](#19promise.race)      |        |
+| [20.proxy](#20proxy)      |        |
   
 
 **未分类**
 | 题目      | 描述 |
 | ----------- | ----------- |
 | [11.AJAX](#11AJAX)      |        |
-| [18.promise.all](#18promise.all)      |        |
-| [19.promise.race](#19promise.race)      |        |
   
 
 ### [1.防抖](./src/1.防抖.js)
@@ -446,6 +447,29 @@ export function promiseRace(list) {
       p.then(resolve, reject)
     })
   })
+}
+```
+  
+### [20.proxy](./src/20.proxy.js)
+```js
+export function myProxy(target, handler) {
+  const proxyObject = {};
+  Object.keys(target).forEach(key => {
+    Object.defineProperty(proxyObject, key, {
+      get: function() {
+        return handler.get? handler.get(target, key) : target[key];
+      },
+      set: function(value) {
+        if (handler.set) {
+          handler.set(target, key, value);
+        } else {
+          target[key] = value;
+        }
+        return true;
+      }
+    });
+  });
+  return proxyObject;
 }
 ```
   
