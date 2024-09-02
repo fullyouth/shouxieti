@@ -49,6 +49,8 @@
 | 题目      | 描述 |
 | ----------- | ----------- |
 | [11.AJAX](#11AJAX)      |        |
+| [18.promise.all](#18promise.all)      |        |
+| [19.promise.race](#19promise.race)      |        |
   
 
 ### [1.防抖](./src/1.防抖.js)
@@ -404,6 +406,46 @@ export function jsonp(url) {
     // 将 script 标签添加到文档中
     document.body.appendChild(script);
   });
+}
+```
+  
+### [18.promise.all](./src/18.promise.all.js)
+```js
+export function promiseAll(list) {
+  return new Promise ((resolve, reject) => {
+    if (Array.isArray(list)) {
+      let ret = []
+      let count = 0
+      list.forEach((p, index) => {
+        if (isPromise) {
+          p.then((data) => {
+            ret[index] = data
+            count ++
+            if (count === list.length) {
+              resolve(ret)
+            }
+          }).catch(err => {
+            reject(err)
+          })
+        } 
+      })
+    }
+  })
+}
+
+function isPromise(fn) {
+  return typeof fn === 'function' &&  typeof fn.then === 'function'
+}
+```
+  
+### [19.promise.race](./src/19.promise.race.js)
+```js
+export function promiseRace(list) {
+  return new Promise((resolve, reject) => {
+    list.forEach(p => {
+      p.then(resolve, reject)
+    })
+  })
 }
 ```
   
