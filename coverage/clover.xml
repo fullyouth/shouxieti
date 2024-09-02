@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1725289277888" clover="3.2.0">
-  <project timestamp="1725289277889" name="All files">
-    <metrics statements="155" coveredstatements="121" conditionals="80" coveredconditionals="56" methods="59" coveredmethods="48" elements="294" coveredelements="225" complexity="0" loc="155" ncloc="155" packages="1" files="20" classes="20"/>
+<coverage generated="1725293163193" clover="3.2.0">
+  <project timestamp="1725293163193" name="All files">
+    <metrics statements="157" coveredstatements="123" conditionals="80" coveredconditionals="56" methods="62" coveredmethods="51" elements="299" coveredelements="230" complexity="0" loc="157" ncloc="157" packages="1" files="21" classes="21"/>
     <file name="1.防抖.js" path="/home/runner/work/shouxieti/shouxieti/src/1.防抖.js">
       <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <line num="3" count="3" type="stmt"/>
@@ -144,6 +144,11 @@
       <line num="12" count="0" type="stmt"/>
       <line num="14" count="0" type="stmt"/>
       <line num="18" count="2" type="stmt"/>
+    </file>
+    <file name="21.驼峰下划线互转.js" path="/home/runner/work/shouxieti/shouxieti/src/21.驼峰下划线互转.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
     </file>
     <file name="3.数组去重.js" path="/home/runner/work/shouxieti/shouxieti/src/3.数组去重.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
