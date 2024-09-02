@@ -133,8 +133,14 @@ function createTag(arr) {
 async function main() {
   const header = `
 # Javascript常见面试手写题
-此文档由\`npm run docs\` 自动生成  
 
+## 写在前面
+
+下面这是本册的封面图  
+寓意：向往**阳光**和**自由**  
+<img width="50%" style="border: 1px solid #86909c4a" src="https://www.haoqi123.com/assets/img/shouxiexiaoce-book.f4fa9a7a.jpg"/>
+
+此文档由\`npm run docs\` 自动化脚本生成    
 本仓库通过自动化脚本，每次push会自动跑单测  
 **100%单测通过**,每一个方法都使用jest单元测试进行了验证  
 

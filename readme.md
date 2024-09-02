@@ -1,7 +1,13 @@
 
 # Javascript常见面试手写题
-此文档由`npm run docs` 自动生成  
 
+## 写在前面
+
+下面这是本册的封面图  
+寓意：向往**阳光**和**自由**  
+<img width="50%" style="border: 1px solid #86909c4a" src="https://www.haoqi123.com/assets/img/shouxiexiaoce-book.f4fa9a7a.jpg"/>
+
+此文档由`npm run docs` 自动化脚本生成    
 本仓库通过自动化脚本，每次push会自动跑单测  
 **100%单测通过**,每一个方法都使用jest单元测试进行了验证  
 
@@ -52,6 +58,7 @@
 | 题目      | 描述 |
 | ----------- | ----------- |
 | [11.AJAX](#11AJAX)      |        |
+| [21.驼峰下划线互转](#21驼峰下划线互转)      |        |
   
 
 ### [1.防抖](./src/1.防抖.js)
@@ -189,25 +196,6 @@ export class EventEmitter {
     return this;
   }
 }
-
-// const emitter = new EventEmitter();
-
-// const callback1 = (data) => {
-//   console.log('Callback 1:', data);
-// };
-
-// const callback2 = (data) => {
-//   console.log('Callback 2:', data);
-// };
-
-// emitter.on('event1', callback1);
-// emitter.on('event1', callback2);
-
-// emitter.emit('event1', 'Hello from event emitter!');
-
-// emitter.off('event1', callback1);
-
-// emitter.emit('event1', 'Another emit after removing callback1.');
 ```
   
 ### [7.函数柯里化](./src/7.函数柯里化.js)
@@ -470,6 +458,18 @@ export function myProxy(target, handler) {
     });
   });
   return proxyObject;
+}
+```
+  
+### [21.驼峰下划线互转](./src/21.驼峰下划线互转.js)
+```js
+// 下划线转驼峰
+export function snakeToCamel(str) {
+  return str.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase());
+}
+// 驼峰转下划线
+export function camelToSnake(str) {
+  return str.replace(/([A-Z])/g, '_$1').toLowerCase();
 }
 ```
   
